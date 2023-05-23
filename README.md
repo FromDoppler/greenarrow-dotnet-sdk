@@ -1,5 +1,5 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![.NET](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/dotnet.yml/badge.svg)](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/dotnet.yml)
+[![FromDoppler](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/fromdoppler.yml/badge.svg)](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/fromdoppler.yml)
 [![codecov](https://codecov.io/gh/FromDoppler/greenarrow-dotnet-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/FromDoppler/greenarrow-dotnet-sdk)
 
 # greenarrow-dotnet-sdk
