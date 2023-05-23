@@ -1,0 +1,17 @@
+name: FromDoppler
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main", "INT"]
+    tags:
+      - v*.*.*
+
+jobs:
+  fromdoppler:
+    name: Conventions
+    uses: FromDoppler/.github/.github/workflows/conventions.yml@main
+  dotnet:
+    name: .NET
+    uses: FromDoppler/.github/.github/workflows/dotnet.yml@main
