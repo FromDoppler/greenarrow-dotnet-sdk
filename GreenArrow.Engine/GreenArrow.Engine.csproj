@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -14,5 +14,9 @@
     <Product>Green Arrow .NET SDK</Product>
     <RepositoryUrl>https://github.com/FromDoppler/greenarrow-dotnet-sdk</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
 
 </Project>
