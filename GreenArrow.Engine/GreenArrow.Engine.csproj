@@ -3,7 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>FromDoppler</Authors>
+    <Company>FromDoppler</Company>
+    <Description>Green Arrow .NET SDK</Description>
+    <PackageId>GreenArrow</PackageId>
+    <Product>Green Arrow .NET SDK</Product>
+    <RepositoryUrl>https://github.com/FromDoppler/greenarrow-dotnet-sdk</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
