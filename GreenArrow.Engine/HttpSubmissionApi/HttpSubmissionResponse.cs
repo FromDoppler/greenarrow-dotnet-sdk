@@ -1,13 +1,9 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
-namespace GreenArrow.Engine
+namespace GreenArrow.Engine.HttpSubmissionApi
 {
     /// <summary>
     /// GreenArrow Response
     /// </summary>
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class Response
+    public class HttpSubmissionResponse
     {
         /// <summary>
         /// When request was succesful treated
@@ -32,6 +28,6 @@ namespace GreenArrow.Engine
         /// <summary>
         /// An array of responses for many messages
         /// </summary>
-        public ICollection<Response> Messages { get; init; }
+        public ICollection<HttpSubmissionResponse> Messages { get; init; }
     }
 }

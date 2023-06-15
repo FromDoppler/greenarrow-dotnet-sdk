@@ -1,16 +1,24 @@
 ﻿using GreenArrow.Engine.Model;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using GreenArrow.Engine.RestApi;
 using System.ComponentModel.DataAnnotations;
 
-namespace GreenArrow.Engine
+namespace GreenArrow.Engine.HttpSubmissionApi
 {
     /// <summary>
     /// Http Submission Message Request
     /// </summary>
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
-    public class HttpSubmissionRequest : Request
+    public class HttpSubmissionRequest : IRestApiModel
     {
+        /// <summary>
+        /// Email address of an email user (NOT the username of GreenArrow web-interface login)
+        /// </summary>
+        public string Username { get; set; }
+
+        /// <summary>
+        /// Password of <seealso cref="Username"/>
+        /// </summary>
+        public string Password { get; set; }
+
         /// <summary>
         /// For Submission of single message
         /// </summary>
