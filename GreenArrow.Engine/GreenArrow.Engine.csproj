@@ -9,8 +9,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>FromDoppler</Authors>
     <Company>FromDoppler</Company>
-    <Description>Green Arrow .NET SDK</Description>
-    <PackageId>GreenArrow</PackageId>
+    <Description>Green Arrow Engine .NET SDK</Description>
+    <PackageId>GreenArrow.Engine</PackageId>
     <Product>Green Arrow .NET SDK</Product>
     <RepositoryUrl>https://github.com/FromDoppler/greenarrow-dotnet-sdk</RepositoryUrl>
   </PropertyGroup>
