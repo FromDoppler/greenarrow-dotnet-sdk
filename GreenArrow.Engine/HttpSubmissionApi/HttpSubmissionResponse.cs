@@ -16,7 +16,7 @@ namespace GreenArrow.Engine.HttpSubmissionApi
         /// <summary>
         /// Unique identifier
         /// </summary>
-        public int Id { get; init; }
+        public string Id { get; init; }
         /// <summary>
         /// Number of attemps
         /// </summary>
