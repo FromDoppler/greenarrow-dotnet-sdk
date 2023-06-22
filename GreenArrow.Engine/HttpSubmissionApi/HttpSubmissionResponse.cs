@@ -1,9 +1,11 @@
+﻿using GreenArrow.Engine.RestApi;
+
 namespace GreenArrow.Engine.HttpSubmissionApi
 {
     /// <summary>
     /// GreenArrow Response
     /// </summary>
-    public class HttpSubmissionResponse
+    public class HttpSubmissionResponse : IRestApiModel
     {
         /// <summary>
         /// When request was succesful treated
