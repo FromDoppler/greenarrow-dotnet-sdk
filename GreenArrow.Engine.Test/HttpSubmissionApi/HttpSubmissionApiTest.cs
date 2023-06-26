@@ -1,7 +1,9 @@
-﻿using GreenArrow.Engine.RestApi;
+﻿using GreenArrow.Engine.Extensions;
+using GreenArrow.Engine.RestApi;
 using Microsoft.Extensions.Options;
 using Moq.Protected;
 using System.Net;
+using System.Net.Http.Json;
 
 namespace GreenArrow.Engine.HttpSubmissionApi
 {
@@ -165,6 +167,58 @@ namespace GreenArrow.Engine.HttpSubmissionApi
 
             // Assert
             Assert.Equal(exception, result.InnerException);
+        }
+
+        [Fact]
+        public async Task Post_should_return_deserialized_response_content_on_sucessfull()
+        {
+            // Arrange
+            var httpSubmissionResponse = specimens.Create<HttpSubmissionResponse>();
+            var httpContent = new StringContent(httpSubmissionResponse.ToJson());
+
+            var httpResponseMessage = new HttpResponseMessage
+            {
+                StatusCode = HttpStatusCode.OK,
+                Content = httpContent,
+            };
+
+            var httpMessageHandlerMock = CreateHttpMessageHandlerMock(httpResponseMessage);
+            var httpClientFactoryMock = CreateHttpClientFactoryMock(httpMessageHandlerMock.Object);
+            var sut = CreateSut(httpClientFactory: httpClientFactoryMock.Object);
+
+            var request = specimens.Create<HttpSubmissionRequest>();
+
+            // Act
+            var result = await sut.PostAsync(request, CancellationToken.None);
+
+            // Assert
+            Assert.Equal(httpSubmissionResponse.Id, result.Content.Id);
+        }
+
+        [Fact]
+        public async Task Put_should_return_deserialized_response_content_on_sucessfull()
+        {
+            // Arrange
+            var httpSubmissionResponse = specimens.Create<HttpSubmissionResponse>();
+            var httpContent = JsonContent.Create(httpSubmissionResponse);
+
+            var httpResponseMessage = new HttpResponseMessage
+            {
+                StatusCode = HttpStatusCode.OK,
+                Content = httpContent,
+            };
+
+            var httpMessageHandlerMock = CreateHttpMessageHandlerMock(httpResponseMessage);
+            var httpClientFactoryMock = CreateHttpClientFactoryMock(httpMessageHandlerMock.Object);
+            var sut = CreateSut(httpClientFactory: httpClientFactoryMock.Object);
+
+            var request = specimens.Create<HttpSubmissionRequest>();
+
+            // Act
+            var result = await sut.PutAsync(request, CancellationToken.None);
+
+            // Assert
+            Assert.Equal(httpSubmissionResponse.Id, result.Content.Id);
         }
     }
 }
