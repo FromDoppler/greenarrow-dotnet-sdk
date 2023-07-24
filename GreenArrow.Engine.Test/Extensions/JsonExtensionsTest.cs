@@ -1,5 +1,6 @@
 ﻿using GreenArrow.Engine.Extensions;
 using GreenArrow.Engine.HttpSubmissionApi;
+using GreenArrow.Engine.Model;
 
 namespace GreenArrow.Engine.Test.Extensions
 {
@@ -100,6 +101,24 @@ namespace GreenArrow.Engine.Test.Extensions
 
             // Assert
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void Serialize_dkim_list_for_pass_as_header_value_in_http_subbmition_api()
+        {
+            // Arrange
+            const string expected = """"[{\"domain\":\"example.com\",\"selector\":\"foo\"},{\"domain\":\"test.example.com\",\"selector\":\"bar\"}]"""";
+
+            var dkims = new List<Dkim> {
+                new Dkim { Domain = "example.com", Selector = "foo" },
+                new Dkim { Domain = "test.example.com", Selector = "bar" },
+            };
+
+            // Act
+            var value = dkims.ToDkimHeaderValue();
+
+            // Assert
+            Assert.Equal(expected, value);
         }
     }
 }
