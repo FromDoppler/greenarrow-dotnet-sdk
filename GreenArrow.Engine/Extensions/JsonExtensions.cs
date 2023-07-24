@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json;
+﻿using GreenArrow.Engine.Model;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Reflection;
 
 namespace GreenArrow.Engine.Extensions
 {
@@ -37,6 +39,12 @@ namespace GreenArrow.Engine.Extensions
         public static T ToObject<T>(this string json)
         {
             return JsonConvert.DeserializeObject<T>(json, settings);
+        }
+
+        public static string ToDkimHeaderValue(this IList<Dkim> dkims)
+        {
+            var value = JsonConvert.SerializeObject(dkims, settings);
+            return value.Replace("\"", "\\\"");
         }
     }
 }
