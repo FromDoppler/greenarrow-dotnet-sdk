@@ -1,8 +1,9 @@
+# greenarrow-dotnet-sdk
+
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
 [![FromDoppler](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/fromdoppler.yml/badge.svg)](https://github.com/FromDoppler/greenarrow-dotnet-sdk/actions/workflows/fromdoppler.yml)
 [![codecov](https://codecov.io/gh/FromDoppler/greenarrow-dotnet-sdk/branch/main/graph/badge.svg?token=2Wj9lHkIfO)](https://codecov.io/gh/FromDoppler/greenarrow-dotnet-sdk)
-
-# greenarrow-dotnet-sdk
 
 .NET SDK for interact with [greenarrow](https://www.greenarrowemail.com)
 
