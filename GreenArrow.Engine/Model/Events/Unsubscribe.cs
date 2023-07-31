@@ -14,9 +14,6 @@ namespace GreenArrow.Engine.Model.Events
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
     public class Unsubscribe : Event
     {
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.EngineUnsub;
-
         /// <summary>
         /// The URL of the destination unsubscribe link. For unsubscribes that occur as a result of the List-Unsubscribe header, this value will be blank.
         /// </summary>

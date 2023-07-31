@@ -9,9 +9,6 @@ namespace GreenArrow.Engine.Model.Events
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
     public class OpenTracking : Event
     {
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.EngineOpen;
-
         /// <summary>
         /// The IP address that generated the click
         /// </summary>

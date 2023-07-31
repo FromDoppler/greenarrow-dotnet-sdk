@@ -14,7 +14,5 @@ namespace GreenArrow.Engine.Model.Events
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
     public class BounceBadAddress : Bounce
     {
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.BounceBadAddress;
     }
 }
