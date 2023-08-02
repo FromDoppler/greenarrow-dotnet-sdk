@@ -14,9 +14,6 @@ namespace GreenArrow.Engine.Model.Events
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
     public class BounceAll : Bounce
     {
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.BounceAll;
-
         /// <summary>
         /// Indicates whether this was a synchronous bounce (true) or asynchronous bounce (false).
         /// </summary>

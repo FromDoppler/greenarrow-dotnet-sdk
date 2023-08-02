@@ -51,9 +51,6 @@ namespace GreenArrow.Engine.Model.Events
             Connmaxout,
         }
 
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.DeliveryAttempt;
-
         // TODO: verify type
         /// <summary>
         /// The time that the bounce happened, in seconds past the Unix epoch.

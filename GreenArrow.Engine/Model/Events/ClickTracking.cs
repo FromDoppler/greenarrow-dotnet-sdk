@@ -9,9 +9,6 @@ namespace GreenArrow.Engine.Model.Events
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy), ItemNullValueHandling = NullValueHandling.Ignore)]
     public class ClickTracking : Event
     {
-        /// <inheritdoc/>
-        public static new EventType EventType => EventType.EngineClick;
-
         /// <summary>
         /// The URL of the link that was clicked on.	
         /// </summary>
