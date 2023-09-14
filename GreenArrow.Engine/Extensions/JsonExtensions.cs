@@ -22,10 +22,12 @@ namespace GreenArrow.Engine.Extensions
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="model"></param>
+        /// <param name="indented">If should serialize Indented</param>
         /// <returns></returns>
-        public static string ToJson<T>(this T model)
+        public static string ToJson<T>(this T model, bool indented = false)
         {
-            return JsonConvert.SerializeObject(model, Formatting.Indented, settings);
+            var formatting = indented ? Formatting.Indented : Formatting.None;
+            return JsonConvert.SerializeObject(model, formatting, settings);
         }
 
         /// <summary>
