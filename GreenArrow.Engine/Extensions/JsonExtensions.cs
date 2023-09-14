@@ -20,8 +20,8 @@ namespace GreenArrow.Engine.Extensions
         /// <summary>
         /// Serialize object to a json string in format expected by Green Arrow APIs
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="model"></param>
+        /// <typeparam name="T">Type to serialize</typeparam>
+        /// <param name="model">Instance object to serialize</param>
         /// <param name="indented">If should serialize Indented</param>
         /// <returns></returns>
         public static string ToJson<T>(this T model, bool indented = false)
