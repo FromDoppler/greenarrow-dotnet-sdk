@@ -1,5 +1,4 @@
-﻿using GreenArrow.Engine.Model;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace GreenArrow.Engine.Extensions
@@ -21,12 +20,14 @@ namespace GreenArrow.Engine.Extensions
         /// <summary>
         /// Serialize object to a json string in format expected by Green Arrow APIs
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="model"></param>
+        /// <typeparam name="T">Type to serialize</typeparam>
+        /// <param name="model">Instance object to serialize</param>
+        /// <param name="indented">If should serialize Indented</param>
         /// <returns></returns>
-        public static string ToJson<T>(this T model)
+        public static string ToJson<T>(this T model, bool indented = false)
         {
-            return JsonConvert.SerializeObject(model, Formatting.Indented, settings);
+            var formatting = indented ? Formatting.Indented : Formatting.None;
+            return JsonConvert.SerializeObject(model, formatting, settings);
         }
 
         /// <summary>
@@ -38,17 +39,6 @@ namespace GreenArrow.Engine.Extensions
         public static T ToObject<T>(this string json)
         {
             return JsonConvert.DeserializeObject<T>(json, settings);
-        }
-
-        /// <summary>
-        /// Adapt list of Dkim to be used as value of the Green Arrow Header to indicate Dkim to use sending the message
-        /// </summary>
-        /// <param name="dkims">List of Dkim to serialize</param>
-        /// <returns>String with scaped slash to be correct processed by the Http Subbmittion API</returns>
-        public static string ToDkimHeaderValue(this IList<Dkim> dkims)
-        {
-            var value = JsonConvert.SerializeObject(dkims, settings);
-            return value.Replace("\"", "\\\"");
         }
     }
 }
