@@ -103,6 +103,10 @@ namespace GreenArrow.Engine.Test.Extensions
             Assert.NotNull(result);
         }
 
+        /// <summary>
+        /// Verify avoid <code>notice: problem dkim signing message: error decoding JSON</code>
+        /// See <see href="https://www.greenarrowemail.com/docs/greenarrow-engine/Email-Authentication/DKIM/X-GreenArrow-DKIM-Header#error-messages"/>
+        /// </summary>
         [Fact]
         public void Serialize_dkim_list_for_pass_as_header_value_in_http_subbmition_api()
         {
@@ -114,11 +118,14 @@ namespace GreenArrow.Engine.Test.Extensions
                 new Dkim { Domain = "test.example.com", Selector = "bar" },
             };
 
+            var message = new Fixture().Create<Message>();
+            message.Headers.Add("X-GreenArrow-DKIM", dkims.ToJson());
+
             // Act
-            var value = dkims.ToDkimHeaderValue();
+            var value = message.ToJson();
 
             // Assert
-            Assert.Equal(expected, value);
+            Assert.Contains(expected, value);
         }
     }
 }
