@@ -19,108 +19,108 @@ namespace GreenArrow.Engine.Test.EventNotificationSystem
         }
 
         [Fact]
-        public async Task Should_handler_bounce_all_event()
+        public async Task Should_handler_bounce_all_events()
         {
             // Arrange
-            var bounceAll = _specimens.Create<BounceAll>();
+            var events = _specimens.CreateMany<BounceAll>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostBounceAll(bounceAll);
+            await sut.PostBounceAll(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(bounceAll), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<BounceAll>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_bounce_bad_address_event()
+        public async Task Should_handler_bounce_bad_address_events()
         {
             // Arrange
-            var bounceBadAddress = _specimens.Create<BounceBadAddress>();
+            var events = _specimens.CreateMany<BounceBadAddress>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostBounceBadAddress(bounceBadAddress);
+            await sut.PostBounceBadAddress(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(bounceBadAddress), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<BounceBadAddress>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_click_tracking_event()
+        public async Task Should_handler_click_tracking_events()
         {
             // Arrange
-            var clickTracking = _specimens.Create<ClickTracking>();
+            var events = _specimens.CreateMany<ClickTracking>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostClickTracking(clickTracking);
+            await sut.PostClickTracking(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(clickTracking), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<ClickTracking>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_delivery_attempt_event()
+        public async Task Should_handler_delivery_attempt_events()
         {
             // Arrange
-            var deliveryAttempt = _specimens.Create<DeliveryAttempt>();
+            var events = _specimens.CreateMany<DeliveryAttempt>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostDeliveryAttempt(deliveryAttempt);
+            await sut.PostDeliveryAttempt(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(deliveryAttempt), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<DeliveryAttempt>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_open_tracking_event()
+        public async Task Should_handler_open_tracking_events()
         {
             // Arrange
-            var openTracking = _specimens.Create<OpenTracking>();
+            var events = _specimens.CreateMany<OpenTracking>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostOpenTracking(openTracking);
+            await sut.PostOpenTracking(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(openTracking), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<OpenTracking>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_spam_complaint_event()
+        public async Task Should_handler_spam_complaint_events()
         {
             // Arrange
-            var spamComplaint = _specimens.Create<SpamComplaint>();
+            var events = _specimens.CreateMany<SpamComplaint>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostSpamComplaint(spamComplaint);
+            await sut.PostSpamComplaint(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(spamComplaint), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<SpamComplaint>()), Times.Exactly(events.Count()));
         }
 
         [Fact]
-        public async Task Should_handler_unsubscribe_event()
+        public async Task Should_handler_unsubscribe_events()
         {
             // Arrange
-            var unsubscribe = _specimens.Create<Unsubscribe>();
+            var events = _specimens.CreateMany<Unsubscribe>();
             var eventReceptoMock = new Mock<IEventReceptor>();
             var sut = CreateSut(eventReceptoMock.Object);
 
             // Act
-            await sut.PostUnsubscribe(unsubscribe);
+            await sut.PostUnsubscribe(events);
 
             // Assert
-            eventReceptoMock.Verify(x => x.HandleAsync(unsubscribe), Times.Once());
+            eventReceptoMock.Verify(x => x.HandleAsync(It.IsAny<Unsubscribe>()), Times.Exactly(events.Count()));
         }
     }
 }
