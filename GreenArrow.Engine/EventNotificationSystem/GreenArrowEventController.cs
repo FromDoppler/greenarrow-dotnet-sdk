@@ -27,113 +27,134 @@ namespace GreenArrow.Engine.EventNotificationSystem
         }
 
         /// <summary>
-        /// Receive Bounce All event
+        /// Receive Bounce All events
         /// </summary>
         [Route(nameof(EventType.BounceAll))]
         [HttpPost()]
-        public async Task<IActionResult> PostBounceAll([FromBody] BounceAll bounceAll)
+        public async Task<IActionResult> PostBounceAll([FromBody] IEnumerable<BounceAll> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.BounceAll);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.BounceAll);
 
-            await _eventReceptor.HandleAsync(bounceAll);
+            foreach (var bounceAll in events)
+            {
+                await _eventReceptor.HandleAsync(bounceAll);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.BounceAll);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.BounceAll);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Bounce Bad Address event
+        /// Receive Bounce Bad Address events
         /// </summary>
         [Route(nameof(EventType.BounceBadAddress))]
         [HttpPost()]
-        public async Task<IActionResult> PostBounceBadAddress([FromBody] BounceBadAddress bounceBadAddress)
+        public async Task<IActionResult> PostBounceBadAddress([FromBody] IEnumerable<BounceBadAddress> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.BounceBadAddress);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.BounceBadAddress);
 
-            await _eventReceptor.HandleAsync(bounceBadAddress);
+            foreach (var bounceBadAddress in events)
+            {
+                await _eventReceptor.HandleAsync(bounceBadAddress);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.BounceBadAddress);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.BounceBadAddress);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Delivery Attempt event
+        /// Receive Delivery Attempt events
         /// </summary>
         [Route(nameof(EventType.DeliveryAttempt))]
         [HttpPost()]
-        public async Task<IActionResult> PostDeliveryAttempt([FromBody] DeliveryAttempt deliveryAttempt)
+        public async Task<IActionResult> PostDeliveryAttempt([FromBody] IEnumerable<DeliveryAttempt> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.DeliveryAttempt);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.DeliveryAttempt);
 
-            await _eventReceptor.HandleAsync(deliveryAttempt);
+            foreach (var deliveryAttempt in events)
+            {
+                await _eventReceptor.HandleAsync(deliveryAttempt);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.DeliveryAttempt);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.DeliveryAttempt);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Click Tracking event
+        /// Receive Click Tracking events
         /// </summary>
         [Route(nameof(EventType.EngineClick))]
         [HttpPost()]
-        public async Task<IActionResult> PostClickTracking([FromBody] ClickTracking clickTracking)
+        public async Task<IActionResult> PostClickTracking([FromBody] IEnumerable<ClickTracking> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.EngineClick);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineClick);
 
-            await _eventReceptor.HandleAsync(clickTracking);
+            foreach (var deliveryAttempt in events)
+            {
+                await _eventReceptor.HandleAsync(deliveryAttempt);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.EngineClick);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.EngineClick);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Open Tracking event
+        /// Receive Open Tracking events
         /// </summary>
         [Route(nameof(EventType.EngineOpen))]
         [HttpPost()]
-        public async Task<IActionResult> PostOpenTracking([FromBody] OpenTracking openTracking)
+        public async Task<IActionResult> PostOpenTracking([FromBody] IEnumerable<OpenTracking> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.EngineOpen);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineOpen);
 
-            await _eventReceptor.HandleAsync(openTracking);
+            foreach (var openTracking in events)
+            {
+                await _eventReceptor.HandleAsync(openTracking);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.EngineOpen);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.EngineOpen);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Spam Compaint event
+        /// Receive Spam Compaint events
         /// </summary>
         [Route(nameof(EventType.Scomp))]
         [HttpPost()]
-        public async Task<IActionResult> PostSpamComplaint([FromBody] SpamComplaint spamComplaint)
+        public async Task<IActionResult> PostSpamComplaint([FromBody] IEnumerable<SpamComplaint> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.Scomp);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.Scomp);
 
-            await _eventReceptor.HandleAsync(spamComplaint);
+            foreach (var spamComplaint in events)
+            {
+                await _eventReceptor.HandleAsync(spamComplaint);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.Scomp);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.Scomp);
 
             return Ok();
         }
 
         /// <summary>
-        /// Receive Unsubscribe event
+        /// Receive Unsubscribe events
         /// </summary>
         [Route(nameof(EventType.EngineUnsub))]
         [HttpPost()]
-        public async Task<IActionResult> PostUnsubscribe([FromBody] Unsubscribe unsubscribe)
+        public async Task<IActionResult> PostUnsubscribe([FromBody] IEnumerable<Unsubscribe> events)
         {
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} received", EventType.EngineUnsub);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineUnsub);
 
-            await _eventReceptor.HandleAsync(unsubscribe);
+            foreach (var unsubscribe in events)
+            {
+                await _eventReceptor.HandleAsync(unsubscribe);
+            }
 
-            _logger.LogDebug("Green Arrow Event {GreenArrowEventType} handled", EventType.EngineUnsub);
+            _logger.LogDebug("Green Arrow {GreenArrowEventType} events handled", EventType.EngineUnsub);
 
             return Ok();
         }
