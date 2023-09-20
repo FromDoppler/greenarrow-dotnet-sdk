@@ -31,7 +31,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.BounceAll))]
         [HttpPost()]
-        public async Task<IActionResult> PostBounceAll([FromBody] IEnumerable<BounceAll> events)
+        public async Task<IActionResult> PostBounceAll([FromBody] List<BounceAll> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.BounceAll);
 
@@ -50,7 +50,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.BounceBadAddress))]
         [HttpPost()]
-        public async Task<IActionResult> PostBounceBadAddress([FromBody] IEnumerable<BounceBadAddress> events)
+        public async Task<IActionResult> PostBounceBadAddress([FromBody] List<BounceBadAddress> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.BounceBadAddress);
 
@@ -69,7 +69,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.DeliveryAttempt))]
         [HttpPost()]
-        public async Task<IActionResult> PostDeliveryAttempt([FromBody] IEnumerable<DeliveryAttempt> events)
+        public async Task<IActionResult> PostDeliveryAttempt([FromBody] List<DeliveryAttempt> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.DeliveryAttempt);
 
@@ -88,7 +88,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.EngineClick))]
         [HttpPost()]
-        public async Task<IActionResult> PostClickTracking([FromBody] IEnumerable<ClickTracking> events)
+        public async Task<IActionResult> PostClickTracking([FromBody] List<ClickTracking> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineClick);
 
@@ -107,7 +107,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.EngineOpen))]
         [HttpPost()]
-        public async Task<IActionResult> PostOpenTracking([FromBody] IEnumerable<OpenTracking> events)
+        public async Task<IActionResult> PostOpenTracking([FromBody] List<OpenTracking> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineOpen);
 
@@ -126,7 +126,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.Scomp))]
         [HttpPost()]
-        public async Task<IActionResult> PostSpamComplaint([FromBody] IEnumerable<SpamComplaint> events)
+        public async Task<IActionResult> PostSpamComplaint([FromBody] List<SpamComplaint> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.Scomp);
 
@@ -145,7 +145,7 @@ namespace GreenArrow.Engine.EventNotificationSystem
         /// </summary>
         [Route(nameof(EventType.EngineUnsub))]
         [HttpPost()]
-        public async Task<IActionResult> PostUnsubscribe([FromBody] IEnumerable<Unsubscribe> events)
+        public async Task<IActionResult> PostUnsubscribe([FromBody] List<Unsubscribe> events)
         {
             _logger.LogDebug("Green Arrow {GreenArrowEventType} events received", EventType.EngineUnsub);
 
