@@ -88,7 +88,7 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// Primary key of the VirtualMTA that the message is assigned to.
         /// </summary>
-        public int Mtaid { get; init; }
+        public string Mtaid { get; init; }
 
         /// <summary>
         /// The time that the message was injected into GreenArrow’s queue, in seconds past the Unix epoch.
@@ -150,7 +150,7 @@ namespace GreenArrow.Engine.Model.Events
         /// Folded headers will simply contain the folding newlines/whitespace.
         /// As a header may be included in an email multiple times, the value of the JSON object is an array of strings.
         /// </summary>
-        public ICollection<string> Headers { get; init; }
+        public object Headers { get; init; }
 
         /// <summary>
         /// The size of the message (in bytes), if loaded from storage.

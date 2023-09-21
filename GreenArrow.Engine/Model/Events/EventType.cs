@@ -1,8 +1,13 @@
-﻿namespace GreenArrow.Engine.Model.Events
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
+
+namespace GreenArrow.Engine.Model.Events
 {
     /// <summary>
     /// Types of event generate by Green Arrow event processor
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter), typeof(SnakeCaseNamingStrategy))]
     public enum EventType
     {
         /// <summary>
