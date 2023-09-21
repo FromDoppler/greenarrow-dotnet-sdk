@@ -123,7 +123,7 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// Internal use Studio feature that’s not yet documented.
         /// </summary>
-        public int Sendsliceid { get; init; }
+        public string Sendsliceid { get; init; }
 
         /// <summary>
         /// Blank if the delivery attempt took place using an SMTP Relay Server or the default Throttling Rule.
