@@ -27,6 +27,16 @@ namespace GreenArrow.Engine.EventNotificationSystem
         }
 
         /// <summary>
+        /// Receive raw body of events
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] string events)
+        {
+            await _eventReceptor.HandleRawEventsAsync(events);
+            return Ok();
+        }
+
+        /// <summary>
         /// Receive Bounce All events
         /// </summary>
         [Route(nameof(EventType.BounceAll))]
