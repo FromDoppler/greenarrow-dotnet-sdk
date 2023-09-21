@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 
@@ -17,7 +18,8 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// The time that the bounce happened, in seconds past the Unix epoch.
         /// </summary>
-        public long EventTime { get; init; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime EventTime { get; init; }
         /// <summary>
         /// Server ID as configured by server_id.
         /// </summary>
