@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
 namespace GreenArrow.Engine.Model.Events
@@ -51,11 +52,11 @@ namespace GreenArrow.Engine.Model.Events
             Connmaxout,
         }
 
-        // TODO: verify type
         /// <summary>
         /// The time that the bounce happened, in seconds past the Unix epoch.
         /// </summary>
-        public long Timestamp { get; init; }
+        [JsonConverter(typeof(JavaScriptDateTimeConverter))]
+        public DateTime Timestamp { get; init; }
 
         /// <summary>
         /// local if the delivery attempt is to a local mailbox or remote if the delivery attempt is to a remote mail server.
@@ -91,7 +92,8 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// The time that the message was injected into GreenArrow’s queue, in seconds past the Unix epoch.
         /// </summary>
-        public string InjectedTime { get; init; }
+        [JsonConverter(typeof(UnixDateTimeConverter))]
+        public DateTime InjectedTime { get; init; }
 
         /// <summary>
         /// The success, failure, or deferral message for this delivery attempt.	
