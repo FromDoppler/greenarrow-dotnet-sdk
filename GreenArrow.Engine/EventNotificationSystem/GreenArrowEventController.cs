@@ -1,6 +1,7 @@
 ﻿using GreenArrow.Engine.Model.Events;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace GreenArrow.Engine.EventNotificationSystem
 {
