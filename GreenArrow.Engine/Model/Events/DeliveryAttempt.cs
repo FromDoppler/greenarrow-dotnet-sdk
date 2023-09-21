@@ -13,6 +13,7 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// Channel that generate the event
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter), typeof(SnakeCaseNamingStrategy))]
         public enum ChannelEnum
         {
             /// <summary>
@@ -28,6 +29,7 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// Delivery status type
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter), typeof(SnakeCaseNamingStrategy))]
         public enum StatusEnum
         {
             /// <summary>
