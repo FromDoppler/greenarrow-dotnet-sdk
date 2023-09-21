@@ -88,7 +88,7 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// Primary key of the VirtualMTA that the message is assigned to.
         /// </summary>
-        public int Mtaid { get; init; }
+        public string Mtaid { get; init; }
 
         /// <summary>
         /// The time that the message was injected into GreenArrow’s queue, in seconds past the Unix epoch.
