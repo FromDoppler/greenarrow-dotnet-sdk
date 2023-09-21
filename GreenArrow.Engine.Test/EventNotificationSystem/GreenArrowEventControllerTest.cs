@@ -19,6 +19,20 @@ namespace GreenArrow.Engine.Test.EventNotificationSystem
         }
 
         [Fact]
+        public void Should_return_basic_info()
+        {
+            // Arrange
+            var eventReceptoMock = new Mock<IEventReceptor>();
+            var sut = CreateSut(eventReceptoMock.Object);
+
+            // Act
+            var result = sut.Get();
+
+            // Assert
+            Assert.NotNull(result);
+        }
+
+        [Fact]
         public async Task Should_handler_raw_events()
         {
             // Arrange
