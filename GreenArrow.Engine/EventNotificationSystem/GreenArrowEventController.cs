@@ -1,6 +1,7 @@
 ﻿using GreenArrow.Engine.Model.Events;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace GreenArrow.Engine.EventNotificationSystem
 {
@@ -24,6 +25,16 @@ namespace GreenArrow.Engine.EventNotificationSystem
         {
             _logger = logger;
             _eventReceptor = eventReceptor;
+        }
+
+        /// <summary>
+        /// Get Controller information
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("Green Arrow Events Receptor");
         }
 
         /// <summary>
