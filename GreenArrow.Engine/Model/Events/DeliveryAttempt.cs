@@ -55,8 +55,9 @@ namespace GreenArrow.Engine.Model.Events
         /// <summary>
         /// The time that the bounce happened, in seconds past the Unix epoch.
         /// </summary>
-        [JsonConverter(typeof(JavaScriptDateTimeConverter))]
-        public DateTime Timestamp { get; init; }
+        // TODO: verify type because the examples of real values are expressed as float or decimal value and can not be converted directly to DateTime
+        //[JsonConverter(typeof(JavaScriptDateTimeConverter))]
+        public object Timestamp { get; init; }
 
         /// <summary>
         /// local if the delivery attempt is to a local mailbox or remote if the delivery attempt is to a remote mail server.
