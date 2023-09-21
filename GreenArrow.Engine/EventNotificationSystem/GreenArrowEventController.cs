@@ -28,6 +28,16 @@ namespace GreenArrow.Engine.EventNotificationSystem
         }
 
         /// <summary>
+        /// Get Controller information
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("Green Arrow Events Receptor");
+        }
+
+        /// <summary>
         /// Receive raw body of events
         /// </summary>
         [HttpPost]
