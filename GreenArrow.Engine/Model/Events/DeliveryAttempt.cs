@@ -152,7 +152,7 @@ namespace GreenArrow.Engine.Model.Events
         /// Folded headers will simply contain the folding newlines/whitespace.
         /// As a header may be included in an email multiple times, the value of the JSON object is an array of strings.
         /// </summary>
-        public object Headers { get; init; }
+        public Dictionary<string, List<string>> Headers { get; init; }
 
         /// <summary>
         /// The size of the message (in bytes), if loaded from storage.
