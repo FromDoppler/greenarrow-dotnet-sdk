@@ -12,7 +12,7 @@ namespace GreenArrow.Engine.DKIMKeysApi
         /// Create a DKIM Key
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="cancellationToken">The cancellation toekn</param>
+        /// <param name="cancellationToken">The cancellation token</param>
         /// <returns>A generic rest api response with the deserialized DKIM Keys API response when success</returns>
         Task<IRestApiResponse<DKIMKeysResponse>> PostAsync(DKIMKeysRequest request, CancellationToken cancellationToken = default);
     }

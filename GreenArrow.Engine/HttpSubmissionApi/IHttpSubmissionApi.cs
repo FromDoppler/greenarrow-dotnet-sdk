@@ -12,7 +12,7 @@ namespace GreenArrow.Engine.HttpSubmissionApi
         /// Submit messages for delivery
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="cancellationToken">The cancellation toekn</param>
+        /// <param name="cancellationToken">The cancellation token</param>
         /// <returns>A generic rest api response with the deserialized Http Submission API response when success</returns>
         Task<IRestApiResponse<HttpSubmissionResponse>> PostAsync(HttpSubmissionRequest request, CancellationToken cancellationToken = default);
 
@@ -20,7 +20,7 @@ namespace GreenArrow.Engine.HttpSubmissionApi
         /// Submit messages for delivery
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="cancellationToken">The cancellation toekn</param>
+        /// <param name="cancellationToken">The cancellation token</param>
         /// <returns>A generic rest api response with the deserialized Http Submission API response when success</returns>
         Task<IRestApiResponse<HttpSubmissionResponse>> PutAsync(HttpSubmissionRequest request, CancellationToken cancellationToken = default);
     }

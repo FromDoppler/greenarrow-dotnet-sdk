@@ -131,8 +131,8 @@ namespace GreenArrow.Engine.Test.HttpSubmissionApi
         public async Task Post_should_return_deserialized_response_content_on_sucessfull()
         {
             // Arrange
-            var DKIMKeysResponse = specimens.Create<HttpSubmissionResponse>();
-            var httpContent = new StringContent(DKIMKeysResponse.ToJson());
+            var DKIMKeysResponse = specimens.Create<DKIMKeysResponse>();
+            var httpContent = new StringContent(DKIMKeysResponse.ToJson(true));
 
             var httpResponseMessage = new HttpResponseMessage
             {
