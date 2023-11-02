@@ -14,5 +14,10 @@
         /// The HTTP Submission API Endpoint
         /// </summary>
         public string HTTPSubmissionAPIEndpoint { get; set; } = "/api/v1/send.json";
+
+        /// <summary>
+        /// The DKIM API Endpoint
+        /// </summary>
+        public string DKIMKeysAPIEndpoint { get; set; } = "/api/v3/eng/dkim_keys";
     }
 }
