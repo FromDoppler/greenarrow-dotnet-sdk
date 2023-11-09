@@ -22,7 +22,7 @@ namespace GreenArrow.Engine.Model
         /// <summary>
         /// Whether this is the default DKIM key for this domain.
         /// </summary>
-        public string DefaultForDomain { get; init; }
+        public bool DefaultForDomain { get; init; }
 
         /// <summary>
         /// The key data
