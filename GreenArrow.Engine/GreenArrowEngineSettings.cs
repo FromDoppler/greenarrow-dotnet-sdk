@@ -18,6 +18,6 @@
         /// <summary>
         /// The DKIM API Endpoint
         /// </summary>
-        public string DKIMKeysAPIEndpoint { get; set; } = "/api/v3/eng/dkim_keys";
+        public string DKIMKeysAPIEndpoint { get; set; } = "/ga/api/v3/eng/dkim_keys";
     }
 }
