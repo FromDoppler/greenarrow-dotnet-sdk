@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using Moq.Protected;
 using System.Net;
 
-namespace GreenArrow.Engine.Test.HttpSubmissionApi
+namespace GreenArrow.Engine.Test.DKIMKeysApi
 {
     public class DKIMKeysApiTest
     {

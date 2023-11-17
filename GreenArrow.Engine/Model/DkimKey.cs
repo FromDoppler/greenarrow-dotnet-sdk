@@ -38,7 +38,7 @@ namespace GreenArrow.Engine.Model
         /// <summary>
         /// The number of bits used to generate this key.
         /// </summary>
-        public int Bits { get; init; }
+        public int? Bits { get; init; }
 
         /// <summary>
         /// The PEM-encoded private key.
