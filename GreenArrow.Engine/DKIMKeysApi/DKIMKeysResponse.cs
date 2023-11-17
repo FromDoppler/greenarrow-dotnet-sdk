@@ -26,7 +26,7 @@ namespace GreenArrow.Engine.DKIMKeysApi
         /// <summary>
         /// Error message when request was not accepted
         /// </summary>
-        public string ErrorMessages { get; init; }
+        public string[] ErrorMessages { get; init; }
     }
 
     /// <summary>
