@@ -9,6 +9,10 @@ on:
       - v*.*.*
 
 jobs:
+  fromdoppler:
+    name: Conventions
+    uses: FromDoppler/.github/.github/workflows/conventions.yml@main
+    secrets: inherit
   dotnet:
     name: Continuous Integration
     uses: FromDoppler/.github/.github/workflows/dotnet.yml@main
