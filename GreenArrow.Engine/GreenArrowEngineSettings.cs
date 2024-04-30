@@ -19,5 +19,11 @@
         /// The DKIM API Endpoint
         /// </summary>
         public string DKIMKeysAPIEndpoint { get; set; } = "/ga/api/v3/eng/dkim_keys";
+
+
+        /// <summary>
+        /// The DKIM API Endpoint
+        /// </summary>
+        public string SendStatusAPIEndpoint { get; set; } = "/ga/api/v3/eng/sends_by_sendid/{0}/status";
     }
 }
